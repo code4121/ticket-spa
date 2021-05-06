@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1",
+    "status": "Open",
+    "customerName": "Sterling Freight",
+    "tractors": [
+      {
+        "uid": "ABC",
+        "year": "2019",
+        "make": "Freightliner",
+        "model": "Cascadia"
+      }
+    ],
+    "trailers": [
+      {
+        "uid": "DEF",
+        "type": "flat_bed",
+        "year": "2015",
+        "make": "Stoughton",
+        "model": "56-T"
+      }
+    ],
+    "service": {
+      "type": "breakdown",
+      "description": "broke down on the I-15 heading south due to overheating."
+    },
+    "createdOn": ""
+  },
+  {
+    "id": "2",
+    "status": "Complete",
+    "customerName": "RoadCargo",
+    "tractors": [
+      { "uid": "LMNO", "year": "2018", "make": "Volvo", "model": "A0" }
+    ],
+    "trailers": [
+      {
+        "uid": "PQRS",
+        "type": "dry_van",
+        "year": "2012",
+        "make": "Utility",
+        "model": "2210-G4"
+      }
+    ],
+    "service": {
+      "type": "maintenance",
+      "description": "New tires are required on both the trailer and the tractor."
+    },
+    "createdOn": ""
+  }
+]

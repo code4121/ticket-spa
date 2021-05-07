@@ -1,14 +1,14 @@
-export enum TrailerTypeName {
-  dryVan = "Dry Van",
-  flatBed = "Flat Bed",
-  refrigerated = "Refrigerated",
-}
-
 export enum TrailerType {
   dryVan = "dryVan",
   flatBed = "flatBed",
   refrigerated = "refrigerated",
 }
+
+export const TRAILER_TYPE_NAMES = {
+  [TrailerType.dryVan]: "Dry Van",
+  [TrailerType.flatBed]: "Flat Bed",
+  [TrailerType.refrigerated]: "Refrigerated",
+};
 
 export class Trailer {
   constructor(

@@ -2,11 +2,14 @@
 import {
   Driver,
   Service,
+  ServiceType,
+  StatusType,
+  StatusTypeNames,
+  STATUS_TYPE_NAMES,
   Ticket,
   Tractor,
   Trailer,
   TrailerType,
-  TrailerTypeName,
 } from "../../entities";
 import { Business } from "../../entities/business";
 import { ITicketRepository } from "../../usecases";
@@ -20,7 +23,7 @@ import fs from "fs";
 
 export type JSONTicketType = {
   Company: string;
-  Status: string;
+  Status: "closed" | "complete" | "open";
   "Date Opened": string;
   "Date Complete": string;
   Vin: string;
@@ -84,8 +87,8 @@ export class LocalTicketRepository implements ITicketRepository {
         name: b.Company,
       };
       const service: Service = {
-        type: b["Reason Down"],
-        description: b["Repair Notes"],
+        type: ServiceType.breakdown,
+        description: b["Reason Down"] + "; " + b["Repair Notes"],
       };
       const driver: Driver = {
         name: b["Driver Name"],
@@ -95,7 +98,7 @@ export class LocalTicketRepository implements ITicketRepository {
         // id: b["PO Number Issued"],
         id: idx.toString(),
         customer,
-        status: b.Status,
+        status: StatusType[b.Status],
         service,
         tractors,
         trailers,
